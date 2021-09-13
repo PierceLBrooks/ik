@@ -453,8 +453,6 @@ target_include_directories (ik
         $<INSTALL_INTERFACE:include>)
 
 set_target_properties (ik PROPERTIES
-    PREFIX ""
-    DEBUG_POSTFIX ""
     OUTPUT_NAME ${IK_API_NAME}
     SOVERSION ${PROJECT_VERSION})
 
