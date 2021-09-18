@@ -288,14 +288,12 @@ target_compile_options (ik_obj
         /EHa /MTd /W4 /WX /wd4305 /wd4201 /wd4706 /wd4100 /wd4244 /wd4477 /wd4003 /D_CRT_SECURE_NO_DEPRECATE
     >
     PRIVATE $<$<C_COMPILER_ID:GNU>:
-        -W -Wall -Wextra -Werror -Wshadow -Wconversion -Wno-unused-parameter -Wno-conversion -Wno-implicit-fallthrough
+        -W -Wall -Wextra -Wshadow -Wconversion -Wno-unused-parameter -Wno-conversion -Wno-implicit-fallthrough
         -pedantic -pedantic-errors -fno-strict-aliasing -ffast-math
-        $<$<BOOL:IK_PROFILING>:-pg -fno-omit-frame-pointer>
     >
     PRIVATE $<$<C_COMPILER_ID:Clang>:
-        -W -Wall -Wextra -Werror -Wshadow -Wconversion -Wno-unused-parameter -Wno-conversion -Wno-implicit-fallthrough
+        -W -Wall -Wextra -Wshadow -Wconversion -Wno-unused-parameter -Wno-conversion -Wno-implicit-fallthrough
         -pedantic -pedantic-errors -fno-strict-aliasing -ffast-math
-        $<$<BOOL:IK_PROFILING>:-pg -fno-omit-frame-pointer>
     >
 )
 
@@ -322,11 +320,9 @@ if (IK_PYTHON)
         >
         PUBLIC $<$<C_COMPILER_ID:GNU>:
             -Wall -Wextra -Werror -pedantic -pedantic-errors -Wno-missing-field-initializers -Wshadow
-            $<$<BOOL:IK_PROFILING>:-pg -fno-omit-frame-pointer>
         >
         PUBLIC $<$<C_COMPILER_ID:Clang>:
             -Wall -Wextra -Werror -pedantic -pedantic-errors -Wno-missing-field-initializers -Wshadow
-            $<$<BOOL:IK_PROFILING>:-pg -fno-omit-frame-pointer>
         >
     )
     target_compile_definitions (ik_python_obj
@@ -379,11 +375,9 @@ if (IK_TESTS)
         >
         PRIVATE $<$<C_COMPILER_ID:GNU>:
             -Wno-unused-result
-            $<$<BOOL:IK_PROFILING>:-pg -fno-omit-frame-pointer>
         >
         PRIVATE $<$<C_COMPILER_ID:Clang>:
             -Wno-unused-result
-            $<$<BOOL:IK_PROFILING>:-pg -fno-omit-frame-pointer>
         >
     )
     target_compile_definitions (ik_tests_obj
@@ -420,11 +414,9 @@ if (IK_BENCHMARKS)
         >
         PRIVATE $<$<C_COMPILER_ID:GNU>:
             -Wno-unused-result
-            $<$<BOOL:IK_PROFILING>:-pg -fno-omit-frame-pointer>
         >
         PRIVATE $<$<C_COMPILER_ID:Clang>:
             -Wno-unused-result
-            $<$<BOOL:IK_PROFILING>:-pg -fno-omit-frame-pointer>
         >
     )
     target_compile_definitions (ik_benchmarks_obj
